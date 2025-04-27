@@ -60,7 +60,7 @@ print("Janus model loaded successfully!")
 
 # --- 初始化TTS模型 ---
 print("=== Loading TTS model ===")
-device = "cuda:2" if torch.cuda.is_available() else "cpu"
+device = "cuda:1" if torch.cuda.is_available() else "cpu"
 tts_model_name = "tts_models/en/ljspeech/fast_pitch"  # 可替换成你需要的模型
 
 tts = TTS(model_name=tts_model_name, progress_bar=False).to(device)
