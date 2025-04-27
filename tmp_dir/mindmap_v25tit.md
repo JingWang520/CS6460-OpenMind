@@ -1,0 +1,15 @@
+- Common Spiders
+  - General Characteristics
+    - Eight legs, two body segments
+  - Types and Examples
+    - House Spider
+    - Black Widow
+    - Brown Recluse
+    - Wolf Spider
+  - Habitats
+    - Homes
+    - Gardens
+    - Forests
+    - Deserts
+  - Characteristics of Each Type
+    - Size, color, habitat preferences

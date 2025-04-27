@@ -1,0 +1,40 @@
+- Quantum Computing Fundamentals
+  - Introduction to Quantum Computing
+    - Definition of Quantum Computing
+    - Difference between Classical and Quantum Computing
+    - Importance and Applications
+  - Quantum Bits (Qubits)
+    - Definition and Characteristics
+    - Superposition
+    - Entanglement
+  - Quantum Gates
+    - Overview of Quantum Gates
+    - Common Quantum Gates
+      - Pauli-X Gate
+      - Pauli-Y Gate
+      - Pauli-Z Gate
+      - Hadamard Gate
+      - CNOT Gate
+  - Quantum Algorithms
+    - Shor's Algorithm
+      - Overview
+      - Use Case (Integer Factorization)
+    - Grover's Algorithm
+      - Overview
+      - Use Case (Search Problems)
+  - Quantum Measurement
+    - Concept of Measurement in Quantum Mechanics
+    - Collapsing of Qubits
+    - Quantum State and Measurement Outcomes
+  - Quantum Computing Models
+    - Quantum Circuits
+    - Quantum Turing Machines
+    - Adiabatic Quantum Computing
+  - Current State of Quantum Computing
+    - Major Players and Research Institutions
+    - Technological Advances
+    - Challenges and Limitations
+  - Future of Quantum Computing
+    - Potential Impact on Industry
+    - Ethical Considerations
+    - Trends in Research and Development

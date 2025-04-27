@@ -1,0 +1,13 @@
+- Common Spiders
+  - House Spider
+    - Large, yellowish-brown body
+    - Found in homes and buildings
+  - Wolf Spider
+    - Fast-moving, hairy legs
+    - Active hunters of other spiders and insects
+  - Cellar Spider
+    - Long, thin legs
+    - Found in dark, damp areas like cellars and basements
+  - Black Widow
+    - Distinctive black and red coloration
+    - Venomous, found in warm climates

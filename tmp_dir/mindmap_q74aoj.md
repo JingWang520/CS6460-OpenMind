@@ -1,0 +1,18 @@
+- Shoe
+  - Definition
+    - An item worn on the feet
+  - Functions
+    - Protect feet from injuries
+    - Provide comfort
+    - Support steps
+    - Anti-slip and waterproof
+  - Types
+    - Sports shoes
+    - Formal shoes
+    - Sandals
+    - Boots
+  - Materials
+    - Leather
+    - Fabric
+    - Rubber
+    - Synthetic materials

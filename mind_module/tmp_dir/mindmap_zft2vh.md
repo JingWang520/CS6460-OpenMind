@@ -1,0 +1,47 @@
+- Quantum Computing Fundamentals
+  - Introduction to Quantum Computing
+    - Definition of Quantum Computing
+    - Comparison with Classical Computing
+  - Quantum Mechanics Basics
+    - Quantum Bits (Qubits)
+      - Definition of Qubits
+      - Qubit States: |0⟩, |1⟩, Superposition
+    - Quantum Entanglement
+      - Definition and Examples
+      - Importance in Quantum Computing
+    - Quantum Superposition
+      - Concept of Superposition
+      - Role in Quantum Algorithms
+  - Quantum Gates and Circuits
+    - Definition of Quantum Gates
+      - Common Quantum Gates: X, H, CNOT
+    - Constructing Quantum Circuits
+      - Quantum Circuit Representation
+      - Gates Composition and Complexity
+  - Quantum Algorithms
+    - Shor's Algorithm
+      - Prime Factorization Example
+      - Implications for Cryptography
+    - Grover's Algorithm
+      - Search Algorithm Overview
+      - Speedup over Classical Search
+  - Quantum Computing Models
+    - Quantum Gate Model
+    - Quantum Annealing
+      - Definition and Applications
+    - Topological Quantum Computing
+      - Introduction to Topological Qubits
+  - Quantum Hardware
+    - Types of Quantum Computers
+      - Superconducting Qubits
+      - Trapped Ion Quantum Computers
+    - Challenges in Building Quantum Computers
+      - Error Rates and Decoherence
+  - Applications of Quantum Computing
+    - Cryptography
+    - Drug Discovery
+    - Optimization Problems
+    - Machine Learning and AI
+  - Future of Quantum Computing
+    - Research Directions
+    - Potential Impact on Society

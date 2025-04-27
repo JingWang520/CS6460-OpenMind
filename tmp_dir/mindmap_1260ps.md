@@ -1,0 +1,18 @@
+- Common Spiders
+  - Appearance
+    - Body shape and size
+    - Color patterns
+    - Legs number and arrangement
+  - Habitat
+    - Indoor
+      - Wall corners
+      - Window sills
+      - Under furniture
+    - Outdoor
+      - Gardens
+      - Forests
+      - Grasslands
+  - Behavior
+    - Web-spinning habits
+    - Hunting techniques
+    - Migration patterns

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Quantum Computing Fundamentals","children":[{"content":"Introduction to Quantum Computing","children":[{"content":"Definition of Quantum Computing","children":[],"payload":{"tag":"li","lines":"2,3"}},{"content":"Historical Background","children":[],"payload":{"tag":"li","lines":"3,4"}}],"payload":{"tag":"li","lines":"1,4"}},{"content":"Quantum Mechanics Basics","children":[{"content":"Quantum States","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"Superposition","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"Entanglement","children":[],"payload":{"tag":"li","lines":"7,8"}},{"content":"Measurement","children":[],"payload":{"tag":"li","lines":"8,9"}}],"payload":{"tag":"li","lines":"4,9"}},{"content":"Quantum Bits (Qubits)","children":[{"content":"Definition of Qubits","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Qubit Representation","children":[],"payload":{"tag":"li","lines":"11,12"}},{"content":"Qubit vs Classical Bit","children":[],"payload":{"tag":"li","lines":"12,13"}}],"payload":{"tag":"li","lines":"9,13"}},{"content":"Quantum Gates","children":[{"content":"Definition and Role of Quantum Gates","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"Basic Quantum Gates","children":[{"content":"Pauli-X Gate","children":[],"payload":{"tag":"li","lines":"16,17"}},{"content":"Hadamard Gate","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"CNOT Gate","children":[],"payload":{"tag":"li","lines":"18,19"}}],"payload":{"tag":"li","lines":"15,19"}},{"content":"Multi-qubit Gates","children":[],"payload":{"tag":"li","lines":"19,20"}}],"payload":{"tag":"li","lines":"13,20"}},{"content":"Quantum Algorithms","children":[{"content":"Introduction to Quantum Algorithms","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"Shor&apos;s Algorithm","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"Grover&apos;s Algorithm","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"Quantum Approximate Optimization Algorithm (QAOA)","children":[],"payload":{"tag":"li","lines":"24,25"}}],"payload":{"tag":"li","lines":"20,25"}},{"content":"Quantum Circuits","children":[{"content":"Definition of Quantum Circuits","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"Representation of Quantum Circuits","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"Measurement in Quantum Circuits","children":[],"payload":{"tag":"li","lines":"28,29"}}],"payload":{"tag":"li","lines":"25,29"}},{"content":"Quantum Computing Models","children":[{"content":"Gate Model","children":[],"payload":{"tag":"li","lines":"30,31"}},{"content":"Quantum Annealing","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"Topological Quantum Computing","children":[],"payload":{"tag":"li","lines":"32,33"}}],"payload":{"tag":"li","lines":"29,33"}},{"content":"Quantum Hardware","children":[{"content":"Overview of Quantum Computers","children":[],"payload":{"tag":"li","lines":"34,35"}},{"content":"Types of Quantum Computers","children":[{"content":"Superconducting Qubits","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"Trapped Ions","children":[],"payload":{"tag":"li","lines":"37,38"}},{"content":"Topological Qubits","children":[],"payload":{"tag":"li","lines":"38,39"}}],"payload":{"tag":"li","lines":"35,39"}}],"payload":{"tag":"li","lines":"33,39"}},{"content":"Current Trends and Future","children":[{"content":"Research and Development","children":[],"payload":{"tag":"li","lines":"40,41"}},{"content":"Industrial Applications","children":[],"payload":{"tag":"li","lines":"41,42"}},{"content":"Challenges and Limitations","children":[],"payload":{"tag":"li","lines":"42,43"}}],"payload":{"tag":"li","lines":"39,43"}},{"content":"Conclusion","children":[{"content":"Summary of Key Points","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"Future of Quantum Computing","children":[],"payload":{"tag":"li","lines":"45,46"}}],"payload":{"tag":"li","lines":"43,46"}}],"payload":{"tag":"li","lines":"0,46"}},null)</script>
+</body>
+</html>

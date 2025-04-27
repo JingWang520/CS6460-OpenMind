@@ -1,0 +1,13 @@
+- Common Spiders
+  - House Spider (Parasteatoda tepidariorum)
+    - Found in homes, sheds, and other buildings
+    - Pale yellowish-brown color with dark stripes
+  - Cellar Spider (Pholcus phalangioides)
+    - Found in damp, dark areas like basements and crawlspaces
+    - Long, thin body with a distinctive long, thin abdomen
+  - Wolf Spider (Lycosa spp.)
+    - Large, hairy spiders that hunt other spiders for food
+    - Fast movers, often seen running across floors or walls
+  - Black Widow (Latrodectus mactans)
+    - Recognizable by its black body and red hourglass shape on the abdomen
+    - Found in dark areas like woodpiles, sheds, or under rocks

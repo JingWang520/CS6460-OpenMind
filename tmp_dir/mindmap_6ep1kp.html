@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Types of Shoes","children":[{"content":"Casual Shoes","children":[{"content":"Sneakers<br>\n&#x2022; Running shoes<br>\n&#x2022; Basketball shoes<br>\n&#x2022; Football cleats","children":[],"payload":{"tag":"li","lines":"2,6"}},{"content":"Sandals<br>\n&#x2022; Flip-flops<br>\n&#x2022; Wedges","children":[],"payload":{"tag":"li","lines":"6,9"}},{"content":"Loafers<br>\n&#x2022; Slip-on loafers<br>\n&#x2022; Tassel loafers","children":[],"payload":{"tag":"li","lines":"9,12"}}],"payload":{"tag":"li","lines":"1,12"}},{"content":"Formal Shoes","children":[{"content":"Dress Shoes<br>\n&#x2022; Oxfords<br>\n&#x2022; Derbies<br>\n&#x2022; Brogues","children":[],"payload":{"tag":"li","lines":"13,17"}},{"content":"Boots<br>\n&#x2022; Ankle boots<br>\n&#x2022; Knee-high boots","children":[],"payload":{"tag":"li","lines":"17,20"}}],"payload":{"tag":"li","lines":"12,20"}},{"content":"Sports Shoes","children":[{"content":"Running shoes","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"Basketball shoes","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"Football cleats","children":[],"payload":{"tag":"li","lines":"23,24"}}],"payload":{"tag":"li","lines":"20,24"}}],"payload":{"tag":"li","lines":"0,24"}},null)</script>
+</body>
+</html>

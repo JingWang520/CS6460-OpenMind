@@ -1,0 +1,17 @@
+- Shoes
+  - Definition
+    - Footwear item
+  - Functions
+    - Protection
+    - Comfort
+    - Style
+  - Types
+    - Sports shoes
+    - Formal shoes
+    - Sandals
+    - Boots
+  - Materials
+    - Leather
+    - Fabric
+    - Rubber
+    - Synthetic materials

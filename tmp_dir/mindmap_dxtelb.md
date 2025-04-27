@@ -1,0 +1,10 @@
+- Recent Current Events
+  - Vaibhav Suryavanshi's Historic Debut
+    - Youngest player in Indian Premier League history
+    - Made his debut at the age of 14
+  - Ukraine-Russia Conflict
+    - 30-hour truce violated by both sides
+    - Diplomatic efforts ongoing despite tensions
+  - Putin's Easter Truce
+    - Causing skepticism and hope for peace
+    - Russia and Ukraine have different perspectives

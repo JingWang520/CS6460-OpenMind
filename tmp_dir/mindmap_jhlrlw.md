@@ -1,0 +1,19 @@
+- Shoes
+  - Definition
+    - Item worn on the feet
+  - Functions
+    - Protect from injury and elements
+    - Provide comfort and support
+    - Enhance aesthetic appearance
+  - Types
+    - Athletic shoes (running, basketball)
+    - Formal footwear (dress shoes, loafers)
+    - Casual wear (sneakers, sneakers)
+    - Work boots (construction, safety)
+    - Sandals (flip-flops, thongs)
+  - Materials
+    - Leather
+    - Fabric (cotton, synthetic)
+    - Rubber
+    - Plastic
+    - Textiles

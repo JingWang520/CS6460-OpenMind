@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Common Spiders","children":[{"content":"House Spider (Parasteatoda tepidariorum)","children":[{"content":"Found in homes, sheds, and other buildings","children":[],"payload":{"tag":"li","lines":"2,3"}},{"content":"Pale yellowish-brown color with dark stripes","children":[],"payload":{"tag":"li","lines":"3,4"}}],"payload":{"tag":"li","lines":"1,4"}},{"content":"Cellar Spider (Pholcus phalangioides)","children":[{"content":"Found in damp, dark areas like basements and crawlspaces","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"Long, thin body with a distinctive long, thin abdomen","children":[],"payload":{"tag":"li","lines":"6,7"}}],"payload":{"tag":"li","lines":"4,7"}},{"content":"Wolf Spider (Lycosa spp.)","children":[{"content":"Large, hairy spiders that hunt other spiders for food","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"Fast movers, often seen running across floors or walls","children":[],"payload":{"tag":"li","lines":"9,10"}}],"payload":{"tag":"li","lines":"7,10"}},{"content":"Black Widow (Latrodectus mactans)","children":[{"content":"Recognizable by its black body and red hourglass shape on the abdomen","children":[],"payload":{"tag":"li","lines":"11,12"}},{"content":"Found in dark areas like woodpiles, sheds, or under rocks","children":[],"payload":{"tag":"li","lines":"12,13"}}],"payload":{"tag":"li","lines":"10,13"}}],"payload":{"tag":"li","lines":"0,13"}},null)</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+- Quantum Computing Fundamentals
+  - Introduction to Quantum Computing
+    - Definition of Quantum Computing
+    - Historical Background
+  - Quantum Mechanics Principles
+    - Superposition
+    - Entanglement
+    - Quantum Interference
+  - Quantum Bits (Qubits)
+    - Qubit Definition
+    - Qubit Representation
+    - Qubit Manipulation
+  - Quantum Gates and Circuits
+    - Basic Quantum Gates
+      - Hadamard Gate
+      - Pauli-X Gate
+      - CNOT Gate
+    - Quantum Circuit Design
+  - Quantum Algorithms
+    - Shor's Algorithm
+    - Grover's Algorithm
+    - Quantum Simulation Algorithms
+  - Quantum Computing Models
+    - Quantum Turing Machine
+    - Adiabatic Quantum Computation
+    - Quantum Annealing
+  - Current Developments
+    - Quantum Hardware
+      - Superconducting Qubits
+      - Ion Trap Qubits
+    - Quantum Software and Programming Languages
+      - Qiskit
+      - Cirq
+  - Challenges and Limitations
+    - Decoherence
+    - Error Correction
+    - Scalability Issues
+  - Future of Quantum Computing
+    - Potential Applications
+      - Cryptography
+      - Drug Discovery
+      - Optimization Problems
+    - Research Directions

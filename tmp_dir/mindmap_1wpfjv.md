@@ -1,0 +1,14 @@
+- Sunflower
+  - Appearance
+    - Tall stem (can grow up to 3m)
+      - Leaves: large, dark green, and alternate
+        - Shape: oval with pointed tip
+      - Flower head: large, bright yellow, and composite
+        - Size: can be up to 30cm in diameter
+        - Petals: many, arranged in spiral pattern
+          - Shape: triangular with rounded edges
+    - Growth habit: annual or perennial herbaceous plant
+  - Other features
+    - Roots: taproot system for water and nutrient uptake
+      - Depth: can extend up to 2m underground
+    - Seeds: large, edible, and nutritious

@@ -1,0 +1,10 @@
+- Spiders
+  - Arachnids
+    - Eight legs
+    - No wings or antennae
+  - Habitat
+    - Various environments: forests, deserts, homes
+  - Common Types
+    - Wolf spider
+    - House spider
+    - Black widow

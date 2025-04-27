@@ -1,0 +1,37 @@
+- Quantum Computing Fundamentals
+  - Introduction to Quantum Computing
+    - Definition of Quantum Computing
+    - Differences between Classical and Quantum Computing
+  - Quantum Mechanics Principles
+    - Superposition
+    - Entanglement
+    - Quantum Interference
+  - Quantum Bits (Qubits)
+    - Definition of Qubits
+    - Qubit States
+      - |0⟩ state
+      - |1⟩ state
+      - |+⟩ state
+      - |–⟩ state
+  - Quantum Gates
+    - Definition of Quantum Gates
+    - Types of Quantum Gates
+      - Pauli Gates
+      - Hadamard Gate
+      - CNOT Gate
+  - Quantum Algorithms
+    - Shor's Algorithm
+    - Grover's Algorithm
+    - Quantum Fourier Transform
+  - Quantum Computing Models
+    - Gate Model
+    - Quantum Annealing
+    - Topological Quantum Computing
+  - Applications of Quantum Computing
+    - Cryptography
+    - Drug Discovery
+    - Optimization Problems
+  - Current State of Quantum Computing
+    - Leading Quantum Computing Companies
+    - Quantum Computers in Research
+    - Challenges and Limitations

@@ -1,0 +1,39 @@
+- Quantum Computing Fundamentals
+  - Introduction to Quantum Computing
+    - Definition of Quantum Computing
+    - Classical vs Quantum Computing
+  - Quantum Bits (Qubits)
+    - Definition of Qubits
+    - Superposition
+    - Entanglement
+  - Quantum Gates
+    - Definition of Quantum Gates
+    - Common Quantum Gates
+      - Pauli Gates
+      - Hadamard Gate
+      - CNOT Gate
+  - Quantum Algorithms
+    - Shor's Algorithm
+    - Grover's Algorithm
+    - Quantum Simulation
+  - Quantum Measurement
+    - Concept of Measurement in Quantum Mechanics
+    - Measurement Process
+  - Quantum Error Correction
+    - Importance of Error Correction
+    - Basic Error Correction Techniques
+  - Current State of Quantum Computing
+    - Quantum Hardware
+      - Superconducting Qubits
+      - Trapped Ions
+    - Quantum Software
+      - Quantum Programming Languages
+      - Quantum Development Environments
+  - Future of Quantum Computing
+    - Potential Applications
+      - Cryptography
+      - Drug Discovery
+      - Optimization Problems
+    - Challenges Ahead
+      - Scalability
+      - Error Rates
