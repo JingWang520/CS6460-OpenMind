@@ -24,6 +24,7 @@ This project consists of two parts: frontend and backend, which need to be insta
 ### Prerequisites
 
 *   Python 3.8+
+*   Conda or Miniconda installed
 *   (Recommended) Two NVIDIA GPUs 3090 or higher and corresponding CUDA environment (for backend and partial frontend model acceleration).
 *   Ollama (needs to be installed and running, and the Qwen model pulled, e.g., `ollama pull qwen`).
 *   Node.js and npm or yarn (for installing markmap-cli).
@@ -32,12 +33,20 @@ This project consists of two parts: frontend and backend, which need to be insta
 
 ### Steps
 
-1.  **Backend Dependency Installation:**
+1.  **Create and Activate Conda Environment:**
+    It is highly recommended to create a dedicated virtual environment for this project to avoid dependency conflicts.
+    ```bash
+    conda create -n cs6460_openmind python=3.10.9
+    conda activate cs6460_openmind
+    ```
+    Ensure this environment is activated before installing any Python dependencies in the subsequent steps.
+
+2.  **Backend Dependency Installation:**
     *   Navigate to the project directory.
     *   **Navigate to the backend directory (if the backend code is in a subdirectory)**
     *   Install Python dependencies. Note that the following PyTorch installation command is for CUDA 12.1; please adjust the `--index-url` according to your CUDA version.
         ```bash
-        # Ensure you are in the backend directory
+        # Ensure you are in the backend directory AND your conda environment is activated
         pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
         pip install numpy pandas tts fastapi pillow transformers uvicorn huggingface_hub ollama
         ```
@@ -66,13 +75,15 @@ This project consists of two parts: frontend and backend, which need to be insta
         ```
     *   Start the backend service:
         ```bash
+        # Ensure your conda environment is activated
         python backend.py
         ```
 
-2.  **Frontend Dependency Installation:**
+3.  **Frontend Dependency Installation:**
     *   Navigate to the project directory.
     *   Install Python dependencies.
         ```bash
+        # Ensure your conda environment is activated
         pip install sounddevice numpy scipy customtkinter Pillow torch transformers googlesearch-python requests readability-lxml
         ```
     *   Install `markmap-cli` (requires Node.js environment).
@@ -87,7 +98,8 @@ This project consists of two parts: frontend and backend, which need to be insta
         ```
     *   Run the frontend application:
         ```bash
+        # Ensure your conda environment is activated
         python main_GUI.py
         ```
 
-After completing the above steps, you should be able to start and use the OpenMind system. Please ensure you start the backend service first, then the frontend application.
+After completing the above steps, you should be able to start and use the OpenMind system. Please ensure you start the backend service first, then the frontend application. Remember to activate your `cs6460-openmind` conda environment in any new terminal session before running `python backend.py` or `python main_GUI.py`.
