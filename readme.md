@@ -61,7 +61,7 @@ This project consists of two parts: frontend and backend, which need to be insta
     *   Ensure Ollama is running and you have pulled the Qwen model (`ollama pull qwen`):
         ```bash
         curl -fsSL https://ollama.com/install.sh | sh
-        ollama pull qwen
+        ollama pull qwen2.5
         ollama serve # Ensure Ollama server is running
         ```
     *   Start the backend service:
