@@ -1,0 +1,19 @@
+- Clothes
+  - Definition
+    - Items worn on the body to protect, decorate, or provide comfort
+  - Types
+    - Tops (T-shirts, shirts)
+    - Bottoms (pants, shorts)
+    - Outerwear (coats, jackets)
+    - Dresses
+    - Undergarments (bras, underwear)
+  - Materials
+    - Cotton
+    - Silk
+    - Wool
+    - Polyester
+  - Functions
+    - Protection from the elements
+    - Modesty and decorum
+    - Comfort and convenience
+    - Fashion and expression

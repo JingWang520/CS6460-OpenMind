@@ -1,0 +1,15 @@
+- Common Birds
+  - Songbirds
+    - Sparrows
+    - Robins
+    - Finches
+  - Water Birds
+    - Ducks
+    - Geese
+    - Swans
+  - Raptors
+    - Hawks
+    - Eagles
+    - Falcons
+  - Pigeons and Doves
+  - Woodpeckers

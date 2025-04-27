@@ -1,0 +1,17 @@
+- Clothes
+  - Definition
+    - Items worn on the body
+  - Functions
+    - Protection from the environment
+    - Thermal regulation
+    - Modesty and privacy
+    - Personal expression
+  - Types
+    - Outerwear
+    - Undergarments
+    - Work attire
+    - Casual wear
+  - Materials
+    - Natural fibers (cotton, wool)
+    - Synthetic fibers (polyester, nylon)
+    - Blends

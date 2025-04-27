@@ -26,7 +26,7 @@ import wave
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
-
+mg = MindmapGenerator()
 
 class ZoomPanImageViewer(ctk.CTkFrame):
     def __init__(self, master=None, **kwargs):
@@ -145,36 +145,34 @@ class VoiceChatApp(ctk.CTk):
         self.recording = False
         self.audio_data = []
         self.sample_rate = 16000
-        self.mg = MindmapGenerator()
         self.current_user = "User"
         self.chat_history = [
             {"role": "system", "content": (
-                """# 任务要求
-你需要先生成一个关于详细回答内容的mindmap代码块，格式使用Markdown语法，如```mindmap ... ```，然后再进行详细回答。
+                """# Task Requirements
+You need to first generate a `mindmap` code block covering the content of the detailed answer, using Markdown syntax (e.g., ```mindmap ... ```). Then, provide the detailed answer.
 
-# mindmap要求
-- 思维导图需包含一个主题、主要分支和子分支，结构清晰，同时mindmap不能超过四级。
-- 内容要覆盖详细回答的所有关键点，体现逻辑关系。
-- 使用简洁的词语或短语描述节点内容，避免冗长句子。
-- 保持导图内容完整，便于后续详细回答展开。
-- mindmap代码块格式必须正确，确保渲染无误。
+# Mindmap Requirements
+- The mindmap must include a theme, main branches, and sub-branches. It should have a clear structure with distinct levels, preferably not exceeding four levels.
+- Content must cover all key points of the detailed answer and show logical relationships.
+- Use concise words or phrases for node content, avoiding lengthy sentences.
+- Keep the map content complete to facilitate the detailed answer expansion.
+- The mindmap code block format must be correct for proper rendering.
 
-# 详细回答要求
-- 在详细回答中，使用图文结合的方式交替叙述，可以根据需要用```image ... ```代码块插入实物图片描述，图片描述放在回答的相关位置。
-- image代码块使用英语进行描述，且用逗号“,”分割描述元素。
-- 详细回答中不要提及思维导图本身。
-- 详细回答不使用Markdown语法，而是以段落式语言进行回答，语言流畅，信息完整。
-- 回答内容应丰富且易于理解，涵盖mindmap中的各个要点。
+# Detailed Answer Requirements
+- In the detailed answer, use a combination of text and images, alternating narration. Insert image descriptions using ```image ... ``` code blocks where relevant. Place image descriptions at appropriate points in the answer.
+- Image descriptions within ```image ... ``` code blocks must be in English, with elements separated by commas.
+- Do not mention the mindmap itself in the detailed answer.
+- The detailed answer should use paragraph-style language, not Markdown syntax (except for image blocks). The language should be fluent and the information complete.
+- The answer content should be rich and easy to understand, covering all points from the mindmap.
 
-# 配置
-回答语言使用英语
+# General Configuration
+*   **Language:** The entire response **must** be in **English**.
 
-
-# Example  
+# Example
 ## Question  
 What are shoes?  
 
-## Answer  
+## Answer(The answer follow the format of the example)
 ```mindmap
 - Shoes
   - Definition
@@ -339,61 +337,32 @@ The materials of shoes usually include leather, fabric, rubber, and various synt
         self.chat_history.clear()
         self.chat_history.append(
             {"role": "system", "content": (
-                """# Task Overview
-Your primary task is to generate a response that consists of two distinct parts, delivered in sequence:
-1.  A Markdown mindmap outlining the detailed answer.
-2.  The detailed answer itself, following specific formatting and content guidelines.
+                """# Task Requirements
+You need to first generate a `mindmap` code block covering the content of the detailed answer, using Markdown syntax (e.g., ```mindmap ... ```). Then, provide the detailed answer.
 
-# Part 1: Mindmap Generation
+# Mindmap Requirements
+- The mindmap must include a theme, main branches, and sub-branches. It should have a clear structure with distinct levels, preferably not exceeding four levels.
+- Content must cover all key points of the detailed answer and show logical relationships.
+- Use concise words or phrases for node content, avoiding lengthy sentences.
+- Keep the map content complete to facilitate the detailed answer expansion.
+- The mindmap code block format must be correct for proper rendering.
 
-**Instructions:**
-*   **Generate First:** You **must** generate the mindmap code block *before* providing the detailed answer.
-*   **Format:** Use a Markdown `mindmap` code block, enclosed in triple backticks, like this:
-    ```mindmap
-    ... mindmap content ...
-    ```
-*   **Structure:**
-    *   Include one central topic.
-    *   Develop main branches and sub-branches stemming from the topic.
-    *   Maintain a clear, logical structure.
-    *   **Constraint:** The mindmap structure **must not** exceed four levels deep (Topic -> Level 1 -> Level 2 -> Level 3).
-*   **Content:**
-    *   The mindmap nodes must accurately cover all key points planned for the detailed answer.
-    *   Clearly show the logical relationships between points.
-    *   Use concise keywords or short phrases for node descriptions; avoid full sentences.
-    *   Ensure the mindmap is comprehensive enough to serve as a complete outline for the detailed answer.
-*   **Technical:** Ensure the Markdown syntax within the ```mindmap ... ``` block is correct for proper rendering.
-*   **Language:** All text within the mindmap nodes must be in **English**.
-
-# Part 2: Detailed Answer Generation
-
-**Instructions:**
-*   **Follow Mindmap:** The detailed answer **must** elaborate on all the points presented in the mindmap you generated in Part 1.
-*   **Format:**
-    *   Present the answer using standard paragraphs. **Do not** use any Markdown formatting (like headings, bolding, lists) in the main body of the detailed answer.
-    *   Integrate image descriptions by alternating text paragraphs with `image` code blocks where appropriate. Place the image description relevant to the preceding text.
-    *   Use the following format for image descriptions:
-        ```image
-        description element 1, description element 2, description element 3
-        ```
-*   **Image Description Content:**
-    *   Image descriptions inside the ```image ... ``` block **must** be in **English**.
-    *   Use commas (,) to separate descriptive elements within the image description.
-*   **Exclusion:** **Do not** mention or refer to the mindmap itself within the detailed answer. Treat the detailed answer as a standalone piece of content based on the *implicit* structure outlined previously.
-*   **Content Quality:**
-    *   The answer should be rich in detail, informative, and easy to understand.
-    *   Ensure smooth transitions between paragraphs and image descriptions.
-    *   Maintain logical flow and completeness, covering all aspects from the mindmap outline.
+# Detailed Answer Requirements
+- In the detailed answer, use a combination of text and images, alternating narration. Insert image descriptions using ```image ... ``` code blocks where relevant. Place image descriptions at appropriate points in the answer.
+- Image descriptions within ```image ... ``` code blocks must be in English, with elements separated by commas.
+- Do not mention the mindmap itself in the detailed answer.
+- The detailed answer should use paragraph-style language, not Markdown syntax (except for image blocks). The language should be fluent and the information complete.
+- The answer content should be rich and easy to understand, covering all points from the mindmap.
 
 # General Configuration
-*   **Language:** The entire response, including the mindmap nodes and the detailed answer text (excluding potential proper nouns in image descriptions if necessary, but strive for English), **must** be in **English**.
+*   **Language:** The entire response **must** be in **English**.
 
 
-# Example  
+# Example
 ## Question  
 What are shoes?  
 
-## Answer  
+## Answer(The answer follow the format of the example)
 ```mindmap
 - Shoes
   - Definition
@@ -597,8 +566,8 @@ The materials of shoes usually include leather, fabric, rubber, and various synt
             png_path = None
             if mindmap_md:
 
-                md_path = self.mg.save_markdown(mindmap_md)
-                png_path = self.mg.convert_md_to_png(md_path)
+                md_path = mg.save_markdown(mindmap_md)
+                png_path = mg.convert_md_to_png(md_path)
                 if png_path:
                     self.after(0, lambda: self.update_mindmap_image(png_path))
 

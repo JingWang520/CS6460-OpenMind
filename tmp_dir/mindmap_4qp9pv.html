@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Clothes","children":[{"content":"Definition","children":[{"content":"Items worn on the body","children":[],"payload":{"tag":"li","lines":"2,3"}}],"payload":{"tag":"li","lines":"1,3"}},{"content":"Functions","children":[{"content":"Protection from the environment","children":[],"payload":{"tag":"li","lines":"4,5"}},{"content":"Thermal regulation","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"Modesty and privacy","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"Personal expression","children":[],"payload":{"tag":"li","lines":"7,8"}}],"payload":{"tag":"li","lines":"3,8"}},{"content":"Types","children":[{"content":"Outerwear","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Undergarments","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Work attire","children":[],"payload":{"tag":"li","lines":"11,12"}},{"content":"Casual wear","children":[],"payload":{"tag":"li","lines":"12,13"}}],"payload":{"tag":"li","lines":"8,13"}},{"content":"Materials","children":[{"content":"Natural fibers (cotton, wool)","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"Synthetic fibers (polyester, nylon)","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"Blends","children":[],"payload":{"tag":"li","lines":"16,17"}}],"payload":{"tag":"li","lines":"13,17"}}],"payload":{"tag":"li","lines":"0,17"}},null)</script>
+</body>
+</html>

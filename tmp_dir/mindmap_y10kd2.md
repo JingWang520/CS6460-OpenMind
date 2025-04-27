@@ -1,0 +1,16 @@
+- Common Birds
+  - Sparrows
+    - House sparrow
+  - Pigeons
+  - Robins
+  - Finches
+    - Goldfinch
+  - Starlings
+  - Crows
+  - Ravens
+  - Geese
+    - Canada goose
+  - Ducks
+    - Mallard duck
+  - Eagles
+    - Bald eagle

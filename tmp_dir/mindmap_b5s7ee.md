@@ -1,0 +1,5 @@
+- Task Overview
+  - Generate Response
+    - Two Parts: 
+      - Markdown Mindmap
+      - Detailed Answer

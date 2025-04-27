@@ -5,19 +5,19 @@ import platform
 
 class ZoomPanImageViewer(tk.Frame):
     """
-    一个支持缩放和平移图像的Tkinter Frame组件。
+    A Tkinter Frame component that supports zooming and panning of images.
     """
     def __init__(self, master=None, **kwargs):
         super().__init__(master, **kwargs)
 
-        # --- 组件设置 ---
-        # 将 bg="gray" 修改为 bg="white"
-        self.canvas = tk.Canvas(self, bg="white", highlightthickness=0) # <--- 修改这里
+        # --- Widget Setup ---
+        # Changed bg="gray" to bg="white"
+        self.canvas = tk.Canvas(self, bg="white", highlightthickness=0) # <--- Modified here
         self.canvas.grid(row=0, column=0, sticky="nsew")
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
 
-        # --- 图片相关属性 ---
+        # --- Image Properties ---
         self.original_image = None
         self.tk_image = None
         self.image_id = None
@@ -25,12 +25,12 @@ class ZoomPanImageViewer(tk.Frame):
         self.min_zoom = 0.1
         self.max_zoom = 5.0
 
-        # --- 拖动相关属性 ---
+        # --- Drag Properties ---
         self._drag_start_x = 0
         self._drag_start_y = 0
         self._is_dragging = False
 
-        # --- 事件绑定 ---
+        # --- Event Bindings ---
         self.canvas.bind("<ButtonPress-1>", self._on_button_press)
         self.canvas.bind("<B1-Motion>", self._on_button_motion)
         self.canvas.bind("<ButtonRelease-1>", self._on_button_release)
@@ -38,29 +38,29 @@ class ZoomPanImageViewer(tk.Frame):
         if platform.system() == "Windows" or platform.system() == "Darwin":
              self.canvas.bind("<MouseWheel>", self._on_mouse_wheel)
         else:
-             self.canvas.bind("<Button-4>", self._on_mouse_wheel)
-             self.canvas.bind("<Button-5>", self._on_mouse_wheel)
+             self.canvas.bind("<Button-4>", self._on_mouse_wheel) # Linux scroll up
+             self.canvas.bind("<Button-5>", self._on_mouse_wheel) # Linux scroll down
 
         self.canvas.bind("<Configure>", self._on_configure)
         self.canvas.focus_set()
 
-    # ... (其他方法 load_image, _clear_image, _display_image, 等保持不变) ...
+    # ... (Other methods like load_image, _clear_image, _display_image, etc. remain unchanged) ...
     def load_image(self, filepath):
-        """加载指定路径的图片"""
+        """Load the image from the specified path"""
         try:
             self.original_image = Image.open(filepath)
-            print(f"图片加载成功: {filepath}, 尺寸: {self.original_image.size}")
-            self.zoom_level = 1.0 # 重置缩放级别
-            self._display_image() # 显示图片
+            print(f"Image loaded successfully: {filepath}, Size: {self.original_image.size}") # Image loaded successfully, Size
+            self.zoom_level = 1.0 # Reset zoom level
+            self._display_image() # Display the image
         except FileNotFoundError:
-            print(f"错误: 文件未找到 {filepath}")
+            print(f"Error: File not found {filepath}") # Error: File not found
             self._clear_image()
         except Exception as e:
-            print(f"加载图片时出错: {e}")
+            print(f"Error loading image: {e}") # Error loading image
             self._clear_image()
 
     def _clear_image(self):
-        """清除当前显示的图片"""
+        """Clear the currently displayed image"""
         if self.image_id:
             self.canvas.delete(self.image_id)
         self.original_image = None
@@ -69,7 +69,7 @@ class ZoomPanImageViewer(tk.Frame):
         self.zoom_level = 1.0
 
     def _display_image(self):
-        """根据当前缩放级别显示图片"""
+        """Display the image based on the current zoom level"""
         if not self.original_image:
             return
 
@@ -80,18 +80,19 @@ class ZoomPanImageViewer(tk.Frame):
         height = max(1, int(self.original_image.height * self.zoom_level))
 
         try:
+            # Use LANCZOS for resizing, good quality
             resized_img = self.original_image.resize((width, height), Image.Resampling.LANCZOS)
             self.tk_image = ImageTk.PhotoImage(resized_img)
             self.image_id = self.canvas.create_image(0, 0, anchor=tk.CENTER, image=self.tk_image)
             self.canvas.image = self.tk_image # Keep reference
             self._center_image()
         except Exception as e:
-            print(f"调整大小或显示图片时出错: {e}")
+            print(f"Error resizing or displaying image: {e}") # Error resizing or displaying image
             self.image_id = None
             self.tk_image = None
 
     def _center_image(self):
-        """将图片置于Canvas中心"""
+        """Center the image on the Canvas"""
         if not self.image_id:
             return
         self.canvas.update_idletasks()
@@ -101,19 +102,19 @@ class ZoomPanImageViewer(tk.Frame):
             self.canvas.coords(self.image_id, canvas_width / 2, canvas_height / 2)
 
     def _on_configure(self, event):
-        """当Canvas大小改变时，重新居中图片"""
+        """Recenter the image when the Canvas is resized"""
         self._center_image()
 
     def _on_button_press(self, event):
-        """处理鼠标左键按下事件 (开始拖动)"""
+        """Handle mouse left button press event (start dragging)"""
         if not self.image_id: return
         self._drag_start_x = event.x
         self._drag_start_y = event.y
         self._is_dragging = True
-        self.canvas.config(cursor="fleur")
+        self.canvas.config(cursor="fleur") # Change cursor to indicate dragging
 
     def _on_button_motion(self, event):
-        """处理鼠标拖动事件"""
+        """Handle mouse motion event (dragging)"""
         if not self.image_id or not self._is_dragging: return
         dx = event.x - self._drag_start_x
         dy = event.y - self._drag_start_y
@@ -122,87 +123,97 @@ class ZoomPanImageViewer(tk.Frame):
         self._drag_start_y = event.y
 
     def _on_button_release(self, event):
-        """处理鼠标左键释放事件 (结束拖动)"""
+        """Handle mouse left button release event (end dragging)"""
         if not self.image_id: return
         self._is_dragging = False
-        self.canvas.config(cursor="")
+        self.canvas.config(cursor="") # Restore default cursor
 
     def _on_mouse_wheel(self, event):
-        """处理鼠标滚轮事件 (缩放)"""
+        """Handle mouse wheel event (zooming)"""
         if not self.image_id: return
 
         factor = 0.0
         if platform.system() == "Windows" or platform.system() == "Darwin":
+            # event.delta is typically 120 or -120 on Windows/macOS
             factor = 1.1 if event.delta > 0 else 0.9
-        else: # Linux
+        else: # Linux (Button-4 is scroll up, Button-5 is scroll down)
             if event.num == 4: factor = 1.1
             elif event.num == 5: factor = 0.9
 
-        if factor == 0.0: return
+        if factor == 0.0: return # No zoom action detected
 
         new_zoom_level = self.zoom_level * factor
+        # Clamp zoom level within min/max bounds
         new_zoom_level = max(self.min_zoom, min(self.max_zoom, new_zoom_level))
 
-        if new_zoom_level == self.zoom_level: return
+        if new_zoom_level == self.zoom_level: return # No effective change
 
         actual_factor = new_zoom_level / self.zoom_level
         self.zoom_level = new_zoom_level
 
+        # Calculate new image position based on mouse position
         mouse_x, mouse_y = event.x, event.y
         img_x, img_y = self.canvas.coords(self.image_id)
 
+        # Calculate the offset of the mouse from the image center
         offset_x = mouse_x - img_x
         offset_y = mouse_y - img_y
+
+        # Scale the offset
         new_offset_x = offset_x * actual_factor
         new_offset_y = offset_y * actual_factor
+
+        # Calculate the new image center position
         new_img_x = mouse_x - new_offset_x
         new_img_y = mouse_y - new_offset_y
 
+        # Calculate new image dimensions
         new_width = max(1, int(self.original_image.width * self.zoom_level))
         new_height = max(1, int(self.original_image.height * self.zoom_level))
 
         try:
+            # Resize the original image
             resized_img = self.original_image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+            # Create a new PhotoImage
             self.tk_image = ImageTk.PhotoImage(resized_img)
         except Exception as e:
-            print(f"缩放时调整图片大小出错: {e}")
-            self.zoom_level /= actual_factor # Revert zoom level
+            print(f"Error resizing image during zoom: {e}") # Error resizing image during zoom
+            self.zoom_level /= actual_factor # Revert zoom level if resize fails
             return
 
+        # Update the image on the canvas and set its new position
         self.canvas.itemconfig(self.image_id, image=self.tk_image)
         self.canvas.coords(self.image_id, new_img_x, new_img_y)
         self.canvas.image = self.tk_image # Keep reference
 
 
-# --- 示例用法 (也移除了 Frame 的背景色设置，使其更清晰) ---
+# --- Example Usage (Frame background color also removed for clarity) ---
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("图片查看器 (缩放/拖动 - 白色背景)")
+    root.title("Image Viewer (Zoom/Pan - White Background)") # Image Viewer (Zoom/Pan - White Background)
     root.geometry("800x600")
 
-    # 创建图片查看器实例 (不再设置Frame的背景色，让Canvas的白色背景更明显)
-    image_viewer = ZoomPanImageViewer(root) # <--- 移除了 bg="dark slate gray"
+    # Create image viewer instance (removed Frame bg color)
+    image_viewer = ZoomPanImageViewer(root) # <--- Removed bg="dark slate gray"
     image_viewer.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
     def open_image_file():
         filepath = filedialog.askopenfilename(
-            title="选择PNG图片",
-            filetypes=[("PNG 文件", "*.png"), ("JPEG 文件", "*.jpg;*.jpeg"), ("所有文件", "*.*")]
+            title="Select PNG Image", # Select PNG Image
+            filetypes=[("PNG Files", "*.png"), ("JPEG Files", "*.jpg;*.jpeg"), ("All Files", "*.*")] # PNG Files, JPEG Files, All Files
         )
         if filepath:
             image_viewer.load_image(filepath)
 
     button_frame = tk.Frame(root)
     button_frame.pack(pady=5)
-    open_button = ttk.Button(button_frame, text="打开图片", command=open_image_file)
+    open_button = ttk.Button(button_frame, text="Open Image", command=open_image_file)
     open_button.pack()
 
-    default_image_path = "test_image.png" # <--- 修改为你想要测试的图片路径
+    # <--- Change this to the path of the image you want to test
+    default_image_path = "test_image.png"
     try:
         image_viewer.load_image(default_image_path)
     except Exception as e:
-         print(f"无法加载默认图片 '{default_image_path}': {e}")
-         print("请点击 '打开图片' 按钮选择一个文件。")
-
-    root.mainloop()
-
+         print(f"Could not load default image '{default_image_path}': {e}") # Could not load default image
+         print("Please click the 'Open Image' button to select a file.") #

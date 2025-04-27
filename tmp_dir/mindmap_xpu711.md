@@ -1,0 +1,17 @@
+- Common Birds
+  - Sparrows
+    - House Sparrow
+  - Finches
+    - Goldfinch
+  - Swallows
+    - Barn Swallow
+  - Eagles
+    - Bald Eagle
+  - Hawks
+    - Red-Tailed Hawk
+  - Pigeons and Doves
+    - Rock Pigeon
+  - Ravens and Crows
+    - American Crow
+  - Geese, Ducks, and Related Birds
+    - Mallard Duck

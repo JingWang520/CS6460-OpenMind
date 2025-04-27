@@ -1,9 +1,0 @@
-- Common Spiders
-  - House Spider
-    - Found in homes, gardens, and other buildings
-    - Round abdomen, pale yellow or brown color
-    - Unobtrusive web-weaver
-  - Wolf Spider
-    - Large size, grayish-brown color
-    - Active hunter with excellent eyesight
-    - Fast runner and aggressive when threatened

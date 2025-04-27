@@ -48,7 +48,7 @@ This project consists of two parts: frontend and backend, which need to be insta
         ```bash
         # Ensure you are in the backend directory AND your conda environment is activated
         pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
-        pip install numpy pandas tts fastapi pillow transformers uvicorn huggingface_hub ollama
+        pip install numpy pandas TTS fastapi pillow transformers uvicorn huggingface_hub ollama
         ```
     *   **Install Janus Pro (for image generation functionality):**
         *   Clone the Janus repository to a suitable location (e.g., a subdirectory within the backend directory, or parallel to the backend directory). This assumes you are cloning from within the backend directory.
@@ -84,7 +84,7 @@ This project consists of two parts: frontend and backend, which need to be insta
     *   Install Python dependencies.
         ```bash
         # Ensure your conda environment is activated
-        pip install sounddevice numpy scipy customtkinter Pillow torch transformers googlesearch-python requests readability-lxml
+        pip install sounddevice numpy scipy customtkinter Pillow torch transformers googlesearch-python requests readability-lxml lxml_html_clean playwright openai 
         ```
     *   Install `markmap-cli` (requires Node.js environment).
         ```bash

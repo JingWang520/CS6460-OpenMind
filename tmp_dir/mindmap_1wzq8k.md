@@ -1,0 +1,11 @@
+- Common Horses
+  - Arabian Horse
+    - Sleek, athletic build
+  - Quarter Horse
+    - Short legs, strong body
+  - Thoroughbred
+    - Long neck, elegant appearance
+  - Draft Horse (e.g., Belgian)
+    - Large size, powerful build
+  - Paint Horse
+    - Varied color patterns

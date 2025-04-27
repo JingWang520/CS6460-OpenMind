@@ -15,19 +15,19 @@ from pydantic import BaseModel
 from transformers import AutoModelForCausalLM
 from janus.models import VLChatProcessor
 
-# TTS库
+# TTS library
 from TTS.api import TTS
 
-# ollama库
+# Ollama library
 from ollama import chat
 
-# 创建输出目录
+# Create output directories
 os.makedirs('generated_images', exist_ok=True)
 os.makedirs('tts_audio', exist_ok=True)
 
 app = FastAPI()
 
-# CORS配置
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -36,7 +36,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 请求模型定义
+# Request model definitions
 class ImageGenerationRequest(BaseModel):
     prompt: str
 
@@ -50,7 +50,7 @@ class TextRequest(BaseModel):
 class TTSRequest(BaseModel):
     text: str
 
-# --- 加载Janus模型 ---
+# --- Load Janus model ---
 print("=== Loading Janus model ===")
 model_path = "deepseek-ai/Janus-Pro-7B"
 vl_chat_processor = VLChatProcessor.from_pretrained(model_path)
@@ -58,20 +58,20 @@ vl_gpt = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True
 vl_gpt = vl_gpt.to(torch.bfloat16).cuda().eval()
 print("Janus model loaded successfully!")
 
-# --- 初始化TTS模型 ---
+# --- Initialize TTS model ---
 print("=== Loading TTS model ===")
 device = "cuda:1" if torch.cuda.is_available() else "cpu"
-tts_model_name = "tts_models/en/ljspeech/fast_pitch"  # 可替换成你需要的模型
+tts_model_name = "tts_models/en/ljspeech/fast_pitch"  # Replace with the model you need
 
 tts = TTS(model_name=tts_model_name, progress_bar=False).to(device)
 print("TTS model loaded.")
 
-# --- 初始化Ollama客户端和Qwen模型 ---
+# --- Initialize Ollama client and Qwen model ---
 print("=== Initializing Ollama client ===")
 qwen_model_name = "qwen2.5"
 print("Ollama client ready.")
 
-# Janus图像生成函数（你的原代码）
+# Janus image generation function (your original code)
 @torch.inference_mode()
 def generate_image(
         mmgpt,
@@ -130,7 +130,7 @@ def generate_image(
     image = PIL.Image.fromarray(visual_img[0])
     return image
 
-# Janus图像生成接口
+# Janus image generation endpoint
 @app.post("/generate-image/")
 async def generate_image_endpoint(request: ImageGenerationRequest):
     try:
@@ -160,7 +160,7 @@ async def generate_image_endpoint(request: ImageGenerationRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# 新增：Qwen文本生成接口
+# New: Qwen text generation endpoint
 
 @app.post("/generate-text/")
 async def generate_text_endpoint(request: TextRequest):
@@ -176,7 +176,7 @@ async def generate_text_endpoint(request: TextRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# 新增：TTS接口
+# New: TTS endpoint
 @app.post("/tts/")
 async def tts_endpoint(request: TTSRequest):
     try:
@@ -184,10 +184,10 @@ async def tts_endpoint(request: TTSRequest):
         timestamp = int(time.time())
         wav_path = os.path.join("tts_audio", f"tts_{timestamp}.wav")
 
-        # 使用TTS合成语音并保存
+        # Use TTS to synthesize speech and save
         tts.tts_to_file(text=text, file_path=wav_path)
 
-        # 读取wav文件转base64
+        # Read wav file and convert to base64
         with open(wav_path, "rb") as f:
             wav_bytes = f.read()
         wav_base64 = base64.b64encode(wav_bytes).decode("utf-8")

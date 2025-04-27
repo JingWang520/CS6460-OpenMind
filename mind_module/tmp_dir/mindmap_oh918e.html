@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Quantum Computing Fundamentals","children":[{"content":"Introduction to Quantum Computing","children":[{"content":"Definition of Quantum Computing","children":[],"payload":{"tag":"li","lines":"2,3"}},{"content":"Importance of Quantum Computing","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Comparison with Classical Computing","children":[],"payload":{"tag":"li","lines":"4,5"}}],"payload":{"tag":"li","lines":"1,5"}},{"content":"Basic Concepts","children":[{"content":"Quantum Bits (Qubits)","children":[{"content":"Superposition","children":[],"payload":{"tag":"li","lines":"7,8"}},{"content":"Entanglement","children":[],"payload":{"tag":"li","lines":"8,9"}}],"payload":{"tag":"li","lines":"6,9"}},{"content":"Quantum Gates","children":[{"content":"Definition and Purpose","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Common Quantum Gates","children":[{"content":"Pauli-X Gate","children":[],"payload":{"tag":"li","lines":"12,13"}},{"content":"Hadamard Gate","children":[],"payload":{"tag":"li","lines":"13,14"}},{"content":"CNOT Gate","children":[],"payload":{"tag":"li","lines":"14,15"}}],"payload":{"tag":"li","lines":"11,15"}}],"payload":{"tag":"li","lines":"9,15"}}],"payload":{"tag":"li","lines":"5,15"}},{"content":"Quantum Algorithms","children":[{"content":"Shor&apos;s Algorithm","children":[{"content":"Purpose","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"Applications","children":[],"payload":{"tag":"li","lines":"18,19"}}],"payload":{"tag":"li","lines":"16,19"}},{"content":"Grover&apos;s Algorithm","children":[{"content":"Purpose","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"Applications","children":[],"payload":{"tag":"li","lines":"21,22"}}],"payload":{"tag":"li","lines":"19,22"}},{"content":"Quantum Approximate Optimization Algorithm (QAOA)","children":[],"payload":{"tag":"li","lines":"22,23"}}],"payload":{"tag":"li","lines":"15,23"}},{"content":"Quantum Computing Models","children":[{"content":"Quantum Circuits","children":[{"content":"Circuit Representation","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"Quantum Measurement","children":[],"payload":{"tag":"li","lines":"26,27"}}],"payload":{"tag":"li","lines":"24,27"}},{"content":"Quantum Annealing","children":[{"content":"Concept","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"Applications","children":[],"payload":{"tag":"li","lines":"29,30"}}],"payload":{"tag":"li","lines":"27,30"}},{"content":"Topological Quantum Computing","children":[{"content":"Principles","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"Advantages","children":[],"payload":{"tag":"li","lines":"32,33"}}],"payload":{"tag":"li","lines":"30,33"}}],"payload":{"tag":"li","lines":"23,33"}},{"content":"Quantum Hardware","children":[{"content":"Types of Quantum Computers","children":[{"content":"Superconducting Qubits","children":[],"payload":{"tag":"li","lines":"35,36"}},{"content":"Trapped Ion Qubits","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"Photonic Quantum Computers","children":[],"payload":{"tag":"li","lines":"37,38"}}],"payload":{"tag":"li","lines":"34,38"}},{"content":"Error Correction Techniques","children":[{"content":"Quantum Error Correction Codes","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"Fault-Tolerant Quantum Computing","children":[],"payload":{"tag":"li","lines":"40,41"}}],"payload":{"tag":"li","lines":"38,41"}}],"payload":{"tag":"li","lines":"33,41"}},{"content":"Applications of Quantum Computing","children":[{"content":"Cryptography","children":[],"payload":{"tag":"li","lines":"42,43"}},{"content":"Drug Discovery","children":[],"payload":{"tag":"li","lines":"43,44"}},{"content":"Optimization Problems","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"Artificial Intelligence","children":[],"payload":{"tag":"li","lines":"45,46"}}],"payload":{"tag":"li","lines":"41,46"}},{"content":"Challenges in Quantum Computing","children":[{"content":"Scalability","children":[],"payload":{"tag":"li","lines":"47,48"}},{"content":"Decoherence","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"Error Rates","children":[],"payload":{"tag":"li","lines":"49,50"}}],"payload":{"tag":"li","lines":"46,50"}},{"content":"Future of Quantum Computing","children":[{"content":"Current Research Trends","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"Quantum Supremacy","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"Potential Impact on Society","children":[],"payload":{"tag":"li","lines":"53,54"}}],"payload":{"tag":"li","lines":"50,54"}}],"payload":{"tag":"li","lines":"0,54"}},null)</script>
+</body>
+</html>
